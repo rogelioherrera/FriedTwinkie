@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+double calc(char curAmount);
+int main()
+{
+	double N = .05;
+	double d = .10;//Lower case d is a dime and upper case D is a dollar.
+	double Q = .25;
+	double D = 1.00;
+	const double fryTwinkies = 3.50;
+	double curAmount = 0.0; //Amount entered.
+	double value = 0.0; //Total entered.
+	char input;
+
+
+	cout << "Sup twinkie lover! Insert some coins for a fried twinkie. N is nickel, d is dime, Q is quarter, and D is dollar." << endl;
+	cin >> input;
+	value = 0;
+
+
+	while (value < 3.50) {
+
+		if (input == 'N')
+			curAmount = 0.05;
+		else if (input == 'd')
+			curAmount = 0.10;
+		else if (input == 'Q')
+			curAmount = .25;
+		else if (input == 'D')
+			curAmount = 1.00;
+		else
+			curAmount = 0;
+		value = value + curAmount;
+
+		if (value < 3.50) {
+
+			cout << "instert more coins kid, you have " << value << " entered." << endl;
+			cin >> input;
+
+		}
+
+	}
+
+	if (value == 3.50) {
+		cout << "There ya go buddy!" << endl;
+
+	}
+
+	else {
+		cout << "Here you go man " << value - fryTwinkies << " this is your change.";
+
+	}
+
+
+	return 0;
+
+}
